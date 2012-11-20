@@ -2,12 +2,38 @@ require File.join(File.dirname(__FILE__), "/../../lib/shelter-setup/environment.
 
 describe "Shelter::Setup::Environment" do
   
-  describe "load configs" do
-
-    it "loads all environments" do
+  describe "#all" do
+    before(:all) do
       environment = Shelter::Setup::Environment
-      environment.all
-    end 
+      @environments = environment.all
+    end
+
+    describe "has bacula with virtual machine(s) including" do
+      it "bacula director" do
+        @environments["bacula"].include?("baculadir")
+      end
+      it "baculareg" do
+        @environments["bacula"].include?("baculareg")
+      end
+      it "bacula storage daemon" do
+        @environments["bacula"].include?("baculasd")
+      end
+      it "dedi" do
+        @environments["bacula"].include?("dedi")
+      end
+      it "hetzner_api" do
+        @environments["bacula"].include?("hetzner_api")
+      end
+    end
+
+    describe "has konsoleh with virtual machine(s) including" do
+      it "hetzner_api" do
+        @environments["konsoleh"].include?("hetzner_api")
+      end
+      it "konsoleh" do
+        @environments["konsoleh"].include?("konsoleh")
+      end
+    end
 
   end
 

@@ -14,8 +14,7 @@ module Shelter
     private
 
     def self.load_config
-      config = YAML.load_file('../../config/environments.yml')
-      puts config.inspect
+      YAML.load_file(File.join(File.dirname(__FILE__),'..','config','environments.yml'))
     end
 
     end

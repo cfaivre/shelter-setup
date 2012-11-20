@@ -1,6 +1,10 @@
 bacula:
-  baculasd
-  baculadir
-  hetzner_api
-  dedi
-  baculareg
+  - baculadir
+  - baculareg
+  - baculasd
+  - dedi
+  - hetzner_api
+
+konsoleh:
+  - hetzner_api
+  - konsoleh
