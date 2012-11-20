@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "shelter-init/version"
+require "shelter-setup/version"
 
 Gem::Specification.new do |s|
-  s.name        = "shelter-init"
-  s.version     = Shelter::Init::VERSION
+  s.name        = "shelter-setup"
+  s.version     = Shelter::Setup::VERSION
   s.authors     = ["Christophe Faivre"]
   s.email       = ["christophe.faivre@hetzner.co.za"]
   s.homepage    = ""
   s.summary     = %q{TODO: Write a gem summary}
   s.description = %q{TODO: Write a gem description}
 
-  s.rubyforge_project = "shelter-init"
+  s.rubyforge_project = "shelter-setup"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

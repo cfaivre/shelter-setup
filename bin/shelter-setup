@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.push File.join(File.dirname(__FILE__), "/../lib" )
+require 'optparse'
+#require 'rdoc/usage'
+#require 'rubygems'
+#require 'vagrant-init'
+
+vagrant_details = {}
+
+option_parser = OptionParser.new do |options|
+  options.banner = "Usage: shelter-setup OPTIONS"
+
+  options.separator ""
+  options.separator "Specific options:"
+
+  options.on("-e", "--environment ENVIRONMENT", :REQUIRED,
+          #"Vagrant environment that will be setup.\nMultipe specified by seperating by a comma ','\nEnvironment name cannot contain a comma ','") do |environment|
+          "Vagrant environment that will be setup") do |environment|
+    vagrant_details[:environments] = environment.split(',')
+  end
+
+#  options.on("-s", "--environments 'ENVIRONMENT_1,ENVIRONMENT_2'",
+#          "A merge of multiple Vagrant environments that will be setup") do |environments|
+#    vagrant_details[:environments] = environments.split(',')
+#  end
+
+  options.on("-x", "--exclude_vms VM_1,VM_2", :OPTIONAL,
+          "Specify a list of virtual machines to exclude from your setup") do |virtual_machines|
+    vagrant_details[:excluded_vms] = virtual_machines.split(',')
+  end
+
+  options.on("-l", "--list-environments", :OPTIONAL, "List all defined environments") do
+    Shelter::Setup::Environment.all
+  end
+
+  options.on_tail("-h", "--help", "Show this help message") do
+    puts options.inspect
+    exit
+  end
+
+end
+
+option_parser.parse!
+p vagrant_details

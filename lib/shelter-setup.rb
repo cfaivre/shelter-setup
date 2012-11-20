@@ -1,7 +1,7 @@
-require "shelter-init/version"
+require "shelter-setup/version"
 
 module Shelter
-  module Init
+  module Setup
     # Your code goes here...
   end
 end
