@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "/../../lib/shelter-init/virtual_machine.rb" )
+require File.join(File.dirname(__FILE__), "/../../lib/shelter-setup/virtual_machine.rb" )
 
 describe "Shelter::Setup::VirtualMachine" do
   
