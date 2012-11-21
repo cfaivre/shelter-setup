@@ -1,11 +1,16 @@
 require File.join(File.dirname(__FILE__), "/../../lib/shelter-setup/environment.rb" )
 
 describe "Shelter::Setup::Environment" do
+
+  describe "#build_vagrant_file" do
+    environment = Shelter::Setup::Environment.new('bacula')
+    environment.build_vagrant_file
+  end
   
   describe "#all" do
     before(:all) do
-      environment = Shelter::Setup::Environment
-      @environments = environment.all
+#      environment = Shelter::Setup::Environment.new
+      @environments = Shelter::Setup::Environment.all
     end
 
     describe "has bacula with virtual machine(s) including" do
