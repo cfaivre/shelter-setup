@@ -1,20 +1,17 @@
-baculasd:
-  host_name: 'baculasd1.tst1.host-h.net'
-  host_ip: '10.0.0.11'
-  puppet_repo: 'puppet'
-
 baculadir:
   host_name: 'baculadir1.tst1.host-h.net'
   host_ip: '10.0.0.12'
   puppet_repo: 'puppet'
-  
-hetzner_api:
-  host_name: 'hetzner-api1.tst1.host-h.net'
-  host_ip: '10.0.0.14'
-  cpus: '4'
-  memory: '2048'
-  puppet_repo: 'pocket'
-  puppet_manifest_file: 'hetzner_api.pp'
+
+baculareg:
+  host_name: 'baculareg1.tst1.host-h.net'
+  host_ip: '10.0.0.15'
+  puppet_repo: 'puppet'
+
+baculasd:
+  host_name: 'baculasd1.tst1.host-h.net'
+  host_ip: '10.0.0.11'
+  puppet_repo: 'puppet'
 
 dedi:
   host_name: 'dedi1.tst1.host-h.net'
@@ -22,8 +19,11 @@ dedi:
   memory: '1024'
   puppet_repo: 'puppet'
 
-baculareg:
-  host_name: 'baculareg1.tst1.host-h.net'
-  host_ip: '10.0.0.15'
-  puppet_repo: 'puppet' 
+hetzner_api:
+  host_name: 'hetzner-api1.tst1.host-h.net'
+  host_ip: '10.0.0.14'
+  cpus: '4'
+  memory: '2048'
+  puppet_repo: 'pocket'
+  puppet_manifest_file: 'hetzner_api.pp'
   
