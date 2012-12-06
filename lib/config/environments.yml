@@ -8,3 +8,8 @@ bacula:
 konsoleh:
   - hetzner_api
   - konsoleh
+  - dedi
+  - registrar_proxy
+  - aaapi
+  - ldap
+  - pxe
