@@ -8,50 +8,54 @@ describe "Shelter::Setup::Environment" do
   end
   
   describe "#all" do
-    before(:all) do
-#      environment = Shelter::Setup::Environment.new
-      @environments = Shelter::Setup::Environment.all
-    end
 
     describe "has bacula with virtual machine(s) including" do
+      before(:all) do
+        @environment = Shelter::Setup::Environment.new('bacula').virtual_machines
+      end
+
       it "bacula director" do
-        @environments["bacula"].should include("baculadir")
+        @environment.should include("baculadir")
       end
       it "baculareg" do
-        @environments["bacula"].should include("baculareg")
+        @environment.should include("baculareg")
       end
       it "bacula storage daemon" do
-        @environments["bacula"].should include("baculasd")
+        @environment.should include("baculasd")
       end
       it "dedi" do
-        @environments["bacula"].should include("dedi")
+        @environment.should include("dedi")
       end
       it "hetzner_api" do
-        @environments["bacula"].should include("hetzner_api")
+        @environment.should include("hetzner_api")
       end
     end
 
     describe "has konsoleh with virtual machine(s) including" do
+      before(:all) do
+        @environment = Shelter::Setup::Environment.new('konsoleh').virtual_machines
+      end
+
       it "hetzner_api" do
-        @environments["konsoleh"].should include("hetzner_api")
+        @environment.should include("hetzner_api")
       end
       it "konsoleh" do
-        @environments["konsoleh"].should include("konsoleh")
+        @environment.should include("konsoleh")
       end
       it "dedi" do
-        @environments["konsoleh"].should include("dedi")
+        @environment.should include("dedi")
       end
       it "registrar_proxy" do
-        @environments["konsoleh"].should include("registrar_proxy")
+        @environment.should include("registrar_proxy")
       end
       it "aaapi" do
-        @environments["konsoleh"].should include("aaapi")
+        @environment.should include("aaapi")
       end
       it "ldap" do
-        @environments["konsoleh"].should include("ldap")
+        @environment.should include("ldap")
       end
       it "pxe" do
-        @environments["konsoleh"].should include("pxe")
+        @environment.should include("pxe")
       end
     end
 

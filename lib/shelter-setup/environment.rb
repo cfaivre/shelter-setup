@@ -10,10 +10,13 @@ module Shelter
       end
 
       def build_vagrant_file
-        virtual_machines_names.each do |vm_name|
+        virtual_machines.each do |vm_name|
           vm = Shelter::Setup::VirtualMachine.new(vm_name)
         end
+      end
 
+      def virtual_machines
+        load_config[@environment]
       end
 
       def self.all
@@ -26,9 +29,6 @@ module Shelter
         YAML.load_file(File.join(File.dirname(__FILE__),'..','config','environments.yml'))
       end
 
-      def virtual_machines_names
-        load_config[@environment]
-      end
     end
   end
 end
